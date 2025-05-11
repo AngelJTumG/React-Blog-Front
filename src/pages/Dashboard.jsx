@@ -30,7 +30,6 @@ function Dashboard() {
             <option value="asc">Más antiguos</option>
             <option value="desc">Más recientes</option>
           </select>
-
         </div>
       </div>
 
@@ -39,16 +38,18 @@ function Dashboard() {
           <p style={{ color: '#000' }}>Cargando publicaciones...</p>
         ) : posts.length > 0 ? (
           posts.map((post, index) => {
-            const bgClass = `ag-courses-item_bg ag-courses_item-${(index % 6) + 1}`;
+            const colorClass = `ag-courses_item-${(index % 6) + 1}`;
             const formattedDate = post.createdAt
               ? new Date(post.createdAt).toLocaleString()
               : "Sin fecha";
 
             return (
-              <div className="ag-courses_item" key={post._id}>
+              <div className={`ag-courses_item ${colorClass}`} key={post._id}>
                 <a href={`/publicacion/${post._id}`} className="ag-courses-item_link">
-                  <div className={bgClass}></div>
+                  <div className="ag-courses-item_bg"></div>
+
                   <div className="ag-courses-item_title">{post.title}</div>
+
                   <div className="ag-courses-item_date-box">
                     {post.course} | <span className="ag-courses-item_date">{formattedDate}</span>
                   </div>

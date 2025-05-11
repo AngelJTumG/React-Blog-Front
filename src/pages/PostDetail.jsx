@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getPostById, getComentarios, addComment } from '../services/api';
 import CommentForm from '../components/CommentForm';
 import CommentList from '../components/CommentList';
-import './PostDetail.css'; // Asegúrate de tener este archivo con los estilos
+import './PostDetail.css'; 
 
 function PostDetail() {
   const { id } = useParams();

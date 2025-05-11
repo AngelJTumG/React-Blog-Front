@@ -6,8 +6,8 @@
   top: 0;
   z-index: 999;
   animation: fadeIn 1s ease-out;
-  border-radius: 0 0 20px 20px; /* Bordes redondeados abajo */
-  margin: 0 10px; /* Separación visual con los bordes laterales */
+  border-radius: 0 0 20px 20px; 
+  margin: 0 10px; 
 }
 
 .navbar-logo {
@@ -41,7 +41,6 @@
   color: #f9b234;
 }
 
-/* Animaciones */
 @keyframes fadeIn {
   from {
     opacity: 0;
