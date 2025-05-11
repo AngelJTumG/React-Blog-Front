@@ -38,8 +38,13 @@ function CommentForm({ onSubmit }) {
         onChange={(e) => setContent(e.target.value)}
       />
       {errors.content && <p className="error">{errors.content}</p>}
+<div className="btn3d" onClick={handleSubmit}>
+  <span>Enviar</span>
+  <span>Enviar</span>
+  <span>Enviar</span>
+  <span>Enviar</span>
+</div>
 
-      <button type="submit">Enviar</button>
     </form>
   );
 }

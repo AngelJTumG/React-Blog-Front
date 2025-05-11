@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getPostById, getComentarios, addComment } from '../services/api';
 import CommentForm from '../components/CommentForm';
 import CommentList from '../components/CommentList';
+import './PostDetail.css'; // Asegúrate de tener este archivo con los estilos
 
 function PostDetail() {
   const { id } = useParams();
@@ -31,11 +32,11 @@ function PostDetail() {
   };
 
   if (!post) {
-    return <p>Cargando publicación...</p>;
+    return <p style={{ textAlign: 'center', marginTop: '40px', color: '#fff' }}>Cargando publicación...</p>;
   }
 
   return (
-    <div>
+    <div className="post-detail">
       <h1>{post.title}</h1>
       <p>{post.description}</p>
 
