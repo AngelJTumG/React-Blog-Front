@@ -33,33 +33,35 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="ag-courses_box">
-        {loading ? (
-          <p style={{ color: '#000' }}>Cargando publicaciones...</p>
-        ) : posts.length > 0 ? (
-          posts.map((post, index) => {
-            const colorClass = `ag-courses_item-${(index % 6) + 1}`;
-            const formattedDate = post.createdAt
-              ? new Date(post.createdAt).toLocaleString()
-              : "Sin fecha";
+      <div className="publicaciones-scrollable">
+        <div className="ag-courses_box">
+          {loading ? (
+            <p style={{ color: '#000' }}>Cargando publicaciones...</p>
+          ) : posts.length > 0 ? (
+            posts.map((post, index) => {
+              const colorClass = `ag-courses_item-${(index % 6) + 1}`;
+              const formattedDate = post.createdAt
+                ? new Date(post.createdAt).toLocaleString()
+                : "Sin fecha";
 
-            return (
-              <div className={`ag-courses_item ${colorClass}`} key={post._id}>
-                <a href={`/publicacion/${post._id}`} className="ag-courses-item_link">
-                  <div className="ag-courses-item_bg"></div>
+              return (
+                <div className={`ag-courses_item ${colorClass}`} key={post._id}>
+                  <a href={`/publicacion/${post._id}`} className="ag-courses-item_link">
+                    <div className="ag-courses-item_bg"></div>
 
-                  <div className="ag-courses-item_title">{post.title}</div>
+                    <div className="ag-courses-item_title">{post.title}</div>
 
-                  <div className="ag-courses-item_date-box">
-                    {post.course} | <span className="ag-courses-item_date">{formattedDate}</span>
-                  </div>
-                </a>
-              </div>
-            );
-          })
-        ) : (
-          <p style={{ color: '#000' }}>No hay publicaciones disponibles.</p>
-        )}
+                    <div className="ag-courses-item_date-box">
+                      {post.course} | <span className="ag-courses-item_date">{formattedDate}</span>
+                    </div>
+                  </a>
+                </div>
+              );
+            })
+          ) : (
+            <p style={{ color: '#000' }}>No hay publicaciones disponibles.</p>
+          )}
+        </div>
       </div>
     </div>
   );

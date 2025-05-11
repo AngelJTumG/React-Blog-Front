@@ -61,7 +61,7 @@ body {
   align-items: stretch;
   justify-content: center;
   padding: 50px 0;
-  gap: 30px;
+  gap: 80px 40px;
 }
 
 .ag-courses_item {
