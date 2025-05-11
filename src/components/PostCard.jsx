@@ -3,7 +3,7 @@ import './PostCard.css';
 
 function PostCard({ post }) {
   const formattedDate = post.createdAt
-  ? new Date(post.createdAt).toLocaleDateString()
+  ? new Date(post.createdAt).toLocaleString()
   : "Fecha no disponible";
 
   return (
